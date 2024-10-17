@@ -57,13 +57,15 @@ namespace Lab_2_1
         //конструктор
         public PremiumUser(bool admin, bool active, int sub) : base(admin, active) 
         {
-            this.subscriber = sub;
+             if (sub >= 0) this.subscriber = sub;
         }
 
         // Метод для повышения уровня подписки
         public void Podpiska()
         {
-            subscriber++;
+             if (subscriber > 0)
+             subscriber++;
+             else subscriber = 0; 
         }
 
         // Метод для проверки доступа к премиум контенту
